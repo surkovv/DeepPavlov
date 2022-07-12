@@ -115,6 +115,9 @@ class TorchGenerativeQA(TorchModel):
         input_ = {
             'input_ids': input_ids_batch,
             'attention_mask': attention_mask_batch,
+            'max_length': 50,
+            'num_beams': 3,
+            'do_sample': True
         }
         
         ppl = 0.0
