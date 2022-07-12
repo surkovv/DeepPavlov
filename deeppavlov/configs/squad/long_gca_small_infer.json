@@ -22,8 +22,8 @@
       {
         "class_name": "torch_generative_qa",
         "pretrained_transformer": "{TRANSFORMER}",
-        "load_path": "{MODEL_PATH}/new_model",
-	"save_path": "{MODEL_PATH}/ms_marco_small",
+        "save_path": "{MODEL_PATH}/new_model",
+	"load_path": "{MODEL_PATH}/ms_marco_small",
         "optimizer": "AdamW",
         "optimizer_parameters": {
           "lr": 3e-04,
