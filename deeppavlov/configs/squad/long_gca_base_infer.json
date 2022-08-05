@@ -55,6 +55,10 @@
       {
         "name": "squad_v1_f1",
         "inputs": ["target", "answer"]
+      },
+      {
+        "name": "sacrebleu",
+        "inputs": ["target", "answer"]
       }
     ],
     "class_name": "torch_trainer"

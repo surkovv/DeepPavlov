@@ -5,6 +5,7 @@
   "average__roc_auc__roc_auc__ner_f1": "deeppavlov.metrics.fmeasure:roc_auc__roc_auc__ner_f1",
   "bleu": "deeppavlov.metrics.bleu:bleu",
   "bleu_advanced": "deeppavlov.metrics.bleu:bleu_advanced",
+  "sacrebleu": "deeppavlov.metrics.bleu:sacrebleu",
   "elmo_loss2ppl": "deeppavlov.metrics.elmo_metrics:elmo_loss2ppl",
   "f1": "deeppavlov.metrics.fmeasure:round_f1",
   "f1_macro": "deeppavlov.metrics.fmeasure:round_f1_macro",

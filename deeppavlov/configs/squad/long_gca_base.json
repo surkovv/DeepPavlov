@@ -58,7 +58,12 @@
       {
         "name": "squad_v1_f1",
         "inputs": ["target", "answer"]
+      },
+      {
+        "name": "sacrebleu",
+        "inputs": ["target", "answer"]
       }
+
     ],
     "class_name": "torch_trainer"
   },
@@ -82,6 +87,7 @@
         "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/ms-marco-t5-small.json",
         "subdir": "{DOWNLOADS_PATH}"
       }
-    ]
+
+   ]
   }
 }
