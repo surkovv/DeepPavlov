@@ -1,0 +1,23 @@
+{
+  "chainer": {
+    "in": ["x"],
+    "pipe": [
+      {
+        "config_path": "{CONFIGS_PATH}/kbqa/kbqa_cq_en.json",
+        "in": ["x"],
+        "out": ["answers", "queries"]
+      },
+      {
+        "config_path": "{CONFIGS_PATH}/graph2text/graph2text_bart_infer.json",
+        "in": ["queries"],
+        "out": ["answer"]
+      }
+    ],
+    "out": ["answer"]
+  },
+  "metadata": {
+    "variables": {
+      "CONFIGS_PATH": "{DEEPPAVLOV_PATH}/configs"
+    }
+  }
+}

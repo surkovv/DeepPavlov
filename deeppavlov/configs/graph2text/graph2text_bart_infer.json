@@ -1,30 +1,22 @@
 {
-  "dataset_reader": {
-    "class_name": "sq_reader",
-    "valid_size": 1000,
-    "data_path": "{DOWNLOADS_PATH}/ms-marco-t5-small.json"
-  },
-  "dataset_iterator": {
-    "class_name": "data_learning_iterator"
-  },
-  "chainer": {
+ "chainer": {
     "in": ["graph"],
     "pipe": [
       {
-        "class_name": "deeppavlov.models.graph2text.triplets_preprocessor:TripletsPreprocessor",
+        "class_name": "triplets_preprocessor",
         "in": ["graph"],
         "out": ["preprocessed_graph"]
       },
       {
-        "class_name": "deeppavlov.models.graph2text.triplets_tokenizer:TripletsTokenizer",
-        "tokenizer_path": "/data/home/admin/qa/DeepPavlov/deeppavlov/models/graph2text/JointGT/pretrain_model/jointgt_bart",
+        "class_name": "triplets_tokenizer",
+        "tokenizer_path": "{MODEL_PATH}/pretrain",
         "in": ["preprocessed_graph"],
         "out": ["input_ids"]
       },
       {
-        "class_name": "deeppavlov.models.graph2text.graph2text_bart:GraphToTextBart",
-        "checkpoint_path": "/data/home/admin/qa/DeepPavlov/deeppavlov/models/graph2text/JointGT/checkpoint/jointgt_bart_webnlg",
-        "tokenizer_path": "/data/home/admin/qa/DeepPavlov/deeppavlov/models/graph2text/JointGT/pretrain_model/jointgt_bart",
+        "class_name": "graph_to_text_bart",
+        "checkpoint_path": "{MODEL_PATH}/checkpoint",
+        "tokenizer_path": "{MODEL_PATH}/pretrain",
         "in": ["input_ids"],
         "out": ["answer"]
       }
@@ -34,16 +26,38 @@
   "metadata": {
     "variables": {
       "PROJECT_PATH": "/data/home/admin/qa",
-      "ROOT_PATH": "~/.deeppavlov",
+      "ROOT_PATH": "/data/home/admin/.deeppavlov",
       "DOWNLOADS_PATH": "{ROOT_PATH}/downloads",
       "MODELS_PATH": "{ROOT_PATH}/models",
-      "MODEL_PATH": "{MODELS_PATH}/generative_qa/first_train/ms-marco--max-tok-"
+      "MODEL_PATH": "{MODELS_PATH}/graph2text/JointGT_BART"
     },
     "download": [
       {
-        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/ms_marco_small.pth.tar",
-        "subdir": "{MODEL_PATH}"
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart/pytorch_model.bin",
+        "subdir": "{MODEL_PATH}/pretrain"
+      },
+      {
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart/config.json",
+        "subdir": "{MODEL_PATH}/pretrain"
+      },
+      {
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart/vocab.json",
+        "subdir": "{MODEL_PATH}/pretrain"
+      },
+      {
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart/merges.txt",
+        "subdir": "{MODEL_PATH}/pretrain"
+      },
+
+      {
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart_webnlg/pytorch_model.bin",
+        "subdir": "{MODEL_PATH}/checkpoint"
+      },
+      {
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/jointgt_bart_webnlg/config.json",
+        "subdir": "{MODEL_PATH}/checkpoint"
       }
+
     ]
   }
 }
