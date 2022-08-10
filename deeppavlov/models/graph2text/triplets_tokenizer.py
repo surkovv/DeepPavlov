@@ -1,5 +1,5 @@
 from transformers import BartTokenizer
-from .JointGT.data import WebNLGDataset 
+from JointGT.data import WebNLGDataset 
 
 from deeppavlov.core.common.registry import register
 from deeppavlov.core.models.component import Component

@@ -2,7 +2,7 @@ from deeppavlov.core.common.registry import register
 from deeppavlov.core.models.component import Component
 from typing import List
 from transformers import BartTokenizer
-from .JointGT.modeling_bart import MyBartForConditionalGeneration as MyBart
+from JointGT.modeling_bart import MyBartForConditionalGeneration as MyBart
 import torch
 
 @register('graph2text_bart')
