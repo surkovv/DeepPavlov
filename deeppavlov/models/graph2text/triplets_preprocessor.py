@@ -22,9 +22,22 @@ class TripletsPreprocessor(Component):
             new_set = {}
             new_set['id'] = tset_id
             kbs = {}
+
+            if triplet_set == '':
+                # not found
+                triplet_set = [['Nothing', 'was', 'found']]
+
             for triplet_id, triplet in enumerate(triplet_set):
+                if not self.is_correct(triplet):
+                    continue
+
                 entity_id = "E" + str(triplet_id)
+
                 from_ent, relation, to_ent = triplet
+                
+                if relation == '':
+                    relation = 'is'
+                
                 kbs[entity_id] = [
                     to_ent,
                     to_ent,
@@ -35,6 +48,19 @@ class TripletsPreprocessor(Component):
                         ]
                     ]
                 ]
+
+            if not kbs:
+                kbs['N0'] = [
+                    "found",
+                    "found",
+                    [
+                        [
+                            "was",
+                            "Nothing"
+                        ]
+                    ]
+                ]
+
             new_set['kbs'] = kbs
 
             if true_texts is None:
@@ -45,3 +71,6 @@ class TripletsPreprocessor(Component):
             result.append(new_set)
 
         return result
+    
+    def is_correct(self, triplet):
+        return triplet[0] != '' and triplet[2] != ''
