@@ -105,5 +105,10 @@
   "ubuntu_v2_reader": "deeppavlov.dataset_readers.ubuntu_v2_reader:UbuntuV2Reader",
   "wiki_parser": "deeppavlov.models.kbqa.wiki_parser:WikiParser",
   "wiki_sqlite_vocab": "deeppavlov.vocabs.wiki_sqlite:WikiSQLiteVocab",
-  "wikitionary_100K_vocab": "deeppavlov.vocabs.typos:Wiki100KDictionary"
+  "wikitionary_100K_vocab": "deeppavlov.vocabs.typos:Wiki100KDictionary",
+  "intent_catcher_reader": "deeppavlov.dataset_readers.intent_catcher_reader:IntentCatcherReader",
+  "intent_catcher": "deeppavlov.models.intent_catcher.intent_catcher:IntentCatcher",
+  "triplets_preprocessor": "deeppavlov.models.graph2text.triplets_preprocessor:TripletsPreprocessor",
+  "triplets_tokenizer": "deeppavlov.models.graph2text.triplets_tokenizer:TripletsTokenizer",
+  "graph_to_text_bart": "deeppavlov.models.graph2text.graph2text_bart:GraphToTextBart"
 }
