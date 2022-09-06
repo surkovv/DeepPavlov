@@ -2,7 +2,7 @@
   "dataset_reader": {
     "class_name": "sq_reader",
     "valid_size": 1000,
-    "data_path": "{DOWNLOADS_PATH}/qa-ru-long.json"
+    "data_path": "{DOWNLOADS_PATH}/qa-ru-long-big-answers.json"
   },
   "dataset_iterator": {
     "class_name": "data_learning_iterator"
@@ -80,7 +80,7 @@
     },
     "download": [
       {
-        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/qa-ru-long.json",
+        "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/qa-ru-long-big-answers.json",
         "subdir": "{DOWNLOADS_PATH}"
       }
 
