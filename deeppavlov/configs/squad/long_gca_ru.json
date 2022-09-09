@@ -82,8 +82,11 @@
       {
         "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/qa-ru-long-big-answers.json",
         "subdir": "{DOWNLOADS_PATH}"
+      },
+      {
+         "url": "https://files.deeppavlov.ai/deeppavlov_data/generative_question_answering_new/sber-t5-base-long.pth.tar",
+         "subdir": "{MODEL_PATH}"
       }
-
    ]
   }
 }
